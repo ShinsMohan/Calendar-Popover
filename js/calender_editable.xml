@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <templates xml:space="preserve">
+        <t t-name="diet.CalendarEditablePopoverTemplate">
+            <div class="popover-content">
+                <input type="text" t-model="record.title" class="form-control" placeholder="Event Title"/>
+                
+                <textarea t-model="record.description" class="form-control" placeholder="Event Description"></textarea>
+                <button type="button" t-on-click="onSave" class="btn btn-primary mt-2">Save</button>
+            </div>
+        </t>
+    </templates>
+</odoo>
+
