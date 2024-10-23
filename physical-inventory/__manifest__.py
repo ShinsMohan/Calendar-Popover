@@ -6,6 +6,7 @@
     'author': 'Your Name',
     'depends': ['stock'],
     'data': [
+        'security/ir.model.access.csv',
         'wizard/adjustment_reason_wizard_view.xml',
         'views/stock_move_line_view.xml',
     ],

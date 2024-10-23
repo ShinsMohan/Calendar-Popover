@@ -4,7 +4,18 @@
         <field name="model">stock.move.line</field>
         <field name="inherit_id" ref="stock.view_move_line_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//group" position="inside">
+            <xpath expr="//field[@name='quantity']" position="after">
+                <field name="adjustment_reason" placeholder="Adjustment Reason"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_stock_move_line_tree_inherit" model="ir.ui.view">
+        <field name="name">stock.move.line.tree.inherit</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_move_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='quantity']" position="after">
                 <field name="adjustment_reason"/>
             </xpath>
         </field>
