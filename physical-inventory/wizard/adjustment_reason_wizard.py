@@ -7,7 +7,9 @@ class AdjustmentReasonWizard(models.TransientModel):
     reason = fields.Text(string='Adjustment Reason', required=True)
 
     def confirm_reason(self):
-        inventory = self.env['stock.inventory'].browse(self.env.context.get('active_id'))
-        move_lines = inventory.move_ids_without_package.mapped('move_line_ids')
-        for line in move_lines:
-            line.adjustment_reason = self.reason
+        move_line_id = self.env.context.get('active_move_line_id')
+        if not move_line_id:
+            raise ValueError("No active move line ID found in context.")
+        move_line = self.env['stock.move.line'].browse(move_line_id)
+        move_line.adjustment_reason = self.reason
+        return {'type': 'ir.actions.act_window_close'}
