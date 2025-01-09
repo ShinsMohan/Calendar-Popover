@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="empty_layout">
+
+        <div>
+            
+        </div>
+
+        <div class="article ">
+            <t t-out="0"/>
+        </div>
+        
+        <div class="footer o_standard_footer" style="margin-left:-30px;margin-right:-30px;">
+            
+        </div>   
+    </template>
+
+    
+</odoo>
